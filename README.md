@@ -1,36 +1,57 @@
-# Idle Tech Empire — v1.0
+# Idle Tech Empire — v1.2 Visual Revolution
 
-A browser-based incremental technology tycoon game built with vanilla HTML, CSS and JavaScript.
+A futuristic incremental computing-empire game built with **vanilla HTML, CSS and JavaScript**. This release focuses on presentation: a more immersive hybrid-realistic sci-fi interface, animated processor hardware, layered HUD panels, live ambient particles and stronger visual feedback.
 
-## Run the game
-1. Extract the ZIP file.
-2. Open `index.html` in Chrome, Firefox, Edge or another modern browser.
-3. No installation, server, account or internet connection is required for gameplay. Google Fonts are optional; the game falls back to system fonts if offline.
+## Run locally
 
-## Features
-- Manual CPU benchmarking and automatic compute production
-- Six hardware upgrades with levels and scaling prices
-- Six research technologies
-- Manufacturing facilities and data centres
-- Power capacity and overload efficiency penalty
-- Achievements with credit rewards
-- Prestige / Silicon Ascension with permanent production bonuses
-- LocalStorage autosave and offline earnings (up to 8 hours at 50% efficiency)
-- Responsive layout for mobile and desktop
+Open `index.html` in a modern browser. No build step, package manager, server, API key or paid asset is required.
+
+## Deploy with GitHub Pages
+
+1. Back up your current save from the game before replacing files.
+2. Extract this ZIP.
+3. Upload the contents of `Idle-Compute-Empire-main` to the root of your existing repository, replacing the previous files.
+4. Commit to the branch configured for GitHub Pages (typically `main`).
+5. Refresh the deployed site. If the old CSS remains cached, hard-refresh or clear the site's cached files.
+
+## v1.2 visual changes
+
+- Immersive hybrid-realistic visual direction: physical-looking silicon package, metallic processor edges, scan rings, status readouts and server-rack lighting.
+- Cinematic command-centre hero scene with animated lighting and floating processor.
+- Refined HUD, navigation, resource panels, telemetry, upgrade cards and research panels.
+- CPU laboratory stage with animated scan rings.
+- Animated manufacturing gear and data-centre rack indicators.
+- Lightweight ambient particle canvas, with reduced-motion support and mobile particle limits.
+- Benchmark activation flash and improved touch-friendly controls.
+- Responsive desktop and Android/mobile layouts.
+
+## Compatibility and scope
+
+- Existing gameplay systems and their DOM IDs are retained.
+- Existing LocalStorage save key remains `idleTechEmpire_v1`.
+- No economy, upgrade, research, facility, achievement or prestige formulas were intentionally changed.
+- No new backend, framework, dependency, remote font, API or paid asset is used.
+- Existing saves should load in the same browser and origin. Always export a backup before deploying any update.
 
 ## Project structure
-- `index.html` — game layout and script loading
-- `css/styles.css` — responsive visual design
-- `js/economy.js` — number formatting and cost helpers
-- `js/upgrades.js` — upgrade definitions
-- `js/research.js` — research definitions
-- `js/facilities.js` — manufacturing and data centre definitions
-- `js/achievements.js` — achievement definitions
-- `js/save.js` — local save/load
-- `js/game.js` — game state, simulation, UI and interactions
 
-## Saving
-Progress is stored in browser LocalStorage on the device and browser profile where you play. Clearing browser site data can erase the save. Use the browser's built-in site data backup/export options if you need to preserve it.
+```text
+Idle-Compute-Empire-main/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── achievements.js
+│   ├── economy.js
+│   ├── facilities.js
+│   ├── game.js
+│   ├── research.js
+│   ├── save.js
+│   ├── upgrades.js
+│   └── visuals.js
+└── README.md
+```
 
-## Notes
-This is an original game implementation inspired by the idle tycoon genre. It does not use Adept Games' code, artwork or branding.
+## Testing note
+
+JavaScript syntax, required DOM IDs, script references and ZIP integrity were checked during packaging. This environment did not perform full interactive browser testing on physical Android and desktop devices. Please test benchmark, purchases, research, prestige and save loading on the deployed site before treating the release as fully production-verified.
