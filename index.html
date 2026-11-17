@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="ambient-grid" aria-hidden="true"></div><div class="ambient-orb orb-one" aria-hidden="true"></div><div class="ambient-orb orb-two" aria-hidden="true"></div><canvas id="fx-canvas" aria-hidden="true"></canvas>
   <div class="app-shell">
     <header class="topbar">
       <a class="brand" href="#" aria-label="Idle Tech Empire home">
@@ -41,7 +42,7 @@
         </nav>
         <div class="sidebar-bottom">
           <div class="status-line"><i></i> SYSTEM ONLINE</div>
-          <small>BUILD 1.0.0 · LOCAL SAVE</small>
+          <small>BUILD 1.2.0 · LOCAL SAVE</small>
         </div>
       </aside>
 
@@ -66,6 +67,7 @@
               <div class="chip-glow"></div>
               <div class="chip"><div class="chip-inner"><span>ITE</span><b id="chip-cores">01</b><small>CORE PROCESSOR</small></div></div>
               <div class="chip-caption">SILICON SERIES <span>● ONLINE</span></div>
+              <div class="chip-readout"><span>THERMAL CORE</span><b>OPTIMAL</b><i></i></div>
             </div>
           </div>
           <div class="resource-grid">
@@ -99,7 +101,7 @@
           <div class="page-heading"><div><p class="eyebrow">HARDWARE DIVISION / 02</p><h1>CPU laboratory</h1><p class="muted">Push your silicon to its limits.</p></div></div>
           <div class="cpu-lab-grid">
             <div class="panel cpu-display-panel">
-              <div class="chip large-chip"><div class="chip-inner"><span>ITE</span><b id="lab-chip-cores">01</b><small>CORE PROCESSOR</small></div></div>
+              <div class="lab-chip-stage"><div class="chip large-chip"><div class="chip-inner"><span>ITE</span><b id="lab-chip-cores">01</b><small>CORE PROCESSOR</small></div></div><div class="scan-ring ring-a"></div><div class="scan-ring ring-b"></div><div class="lab-stage-label">SILICON PACKAGE / REV. 01</div></div>
               <h2 id="lab-cpu-name">Silicon Starter</h2><p class="muted">Your primary compute engine</p>
               <div class="stat-pairs"><div><small>Clock speed</small><b id="lab-clock">1.0 GHz</b></div><div><small>Core count</small><b id="lab-cores">1</b></div><div><small>Base output</small><b id="lab-base">1.0 /s</b></div><div><small>Thermal load</small><b id="lab-heat">12%</b></div></div>
             </div>
@@ -155,7 +157,7 @@
       </main>
     </div>
     <div id="toast-region" class="toast-region" aria-live="polite"></div>
-    <footer class="mobile-footer"><span>ITE <b>v1.0</b></span><span id="autosave-status">Autosave enabled</span></footer>
+    <footer class="mobile-footer"><span>ITE <b>v1.2</b></span><span id="autosave-status">Autosave enabled</span></footer>
   </div>
   <script src="js/economy.js"></script>
   <script src="js/upgrades.js"></script>
@@ -164,5 +166,6 @@
   <script src="js/achievements.js"></script>
   <script src="js/save.js"></script>
   <script src="js/game.js"></script>
+  <script src="js/visuals.js"></script>
 </body>
-</html>
+</html>I 
