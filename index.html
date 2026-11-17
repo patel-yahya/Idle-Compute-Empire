@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Idle Tech Empire — build a computing empire from a tiny CPU to a global AI infrastructure network.">
+  <title>Idle Tech Empire</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Idle Tech Empire home">
+        <span class="brand-mark">⌬</span>
+        <span><strong>IDLE TECH</strong><small>EMPIRE</small></span>
+      </a>
+      <div class="top-stats">
+        <div class="top-stat"><span class="stat-label">CREDITS</span><strong id="credits">0</strong></div>
+        <div class="top-stat"><span class="stat-label">COMPUTE</span><strong id="compute">0/s</strong></div>
+        <div class="top-stat"><span class="stat-label">ENERGY</span><strong id="energy">0/0</strong></div>
+      </div>
+      <button class="icon-button" id="save-now" title="Save game" aria-label="Save game">▣</button>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="profile-card">
+          <div class="avatar">CPU</div>
+          <div><strong>FOUNDER</strong><small id="company-level">Startup · Level 1</small></div>
+        </div>
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" data-tab="overview"><span>◈</span> Overview</button>
+          <button class="nav-item" data-tab="cpu"><span>▦</span> CPU Lab</button>
+          <button class="nav-item" data-tab="upgrades"><span>⬆</span> Upgrades</button>
+          <button class="nav-item" data-tab="research"><span>⌘</span> Research</button>
+          <button class="nav-item" data-tab="factory"><span>⚙</span> Manufacturing</button>
+          <button class="nav-item" data-tab="datacentres"><span>▤</span> Data Centres</button>
+          <button class="nav-item" data-tab="achievements"><span>✧</span> Achievements</button>
+          <button class="nav-item" data-tab="prestige"><span>✦</span> Prestige</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="status-line"><i></i> SYSTEM ONLINE</div>
+          <small>BUILD 1.0.0 · LOCAL SAVE</small>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="page active" id="page-overview">
+          <div class="page-heading">
+            <div><p class="eyebrow">COMMAND CENTER / 01</p><h1>Empire overview</h1><p class="muted">Your journey from silicon to the singularity starts here.</p></div>
+            <div class="level-pill">CORP <b id="level-pill">01</b></div>
+          </div>
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <span class="tag">CURRENT FLAGSHIP</span>
+              <h2 id="cpu-name">Silicon Starter</h2>
+              <p id="cpu-description">Your first processor. Small beginnings, unlimited potential.</p>
+              <div class="hero-metrics">
+                <div><small>CORE CLOCK</small><strong id="clock-stat">1.0 GHz</strong></div>
+                <div><small>CORES</small><strong id="core-stat">1</strong></div>
+                <div><small>COMPUTE POWER</small><strong id="power-stat">1.0</strong></div>
+              </div>
+            </div>
+            <div class="chip-wrap">
+              <div class="chip-glow"></div>
+              <div class="chip"><div class="chip-inner"><span>ITE</span><b id="chip-cores">01</b><small>CORE PROCESSOR</small></div></div>
+              <div class="chip-caption">SILICON SERIES <span>● ONLINE</span></div>
+            </div>
+          </div>
+          <div class="resource-grid">
+            <div class="resource-card"><span class="resource-icon cyan">◈</span><div><small>COMPUTE / SEC</small><strong id="overview-cps">0</strong><em>Processing output</em></div></div>
+            <div class="resource-card"><span class="resource-icon purple">⬡</span><div><small>RESEARCH DATA</small><strong id="research-data">0</strong><em>Technology currency</em></div></div>
+            <div class="resource-card"><span class="resource-icon green">ϟ</span><div><small>POWER LOAD</small><strong id="power-load">0%</strong><em>Grid utilization</em></div></div>
+            <div class="resource-card"><span class="resource-icon orange">▤</span><div><small>FACILITIES</small><strong id="facility-count">0</strong><em>Production assets</em></div></div>
+          </div>
+          <div class="two-column">
+            <div class="panel">
+              <div class="panel-heading"><div><p class="eyebrow">LIVE TELEMETRY</p><h3>Production network</h3></div><span class="live-dot">LIVE</span></div>
+              <div class="production-row"><span>CPU compute</span><div class="bar"><i id="cpu-bar"></i></div><b id="cpu-output">0/s</b></div>
+              <div class="production-row"><span>Facility compute</span><div class="bar purple-bar"><i id="facility-bar"></i></div><b id="facility-output">0/s</b></div>
+              <div class="production-row"><span>Power utilization</span><div class="bar orange-bar"><i id="power-bar"></i></div><b id="power-output">0%</b></div>
+              <p class="panel-note">Upgrade your hardware and expand facilities to increase network throughput.</p>
+            </div>
+            <div class="panel mission-panel">
+              <div class="panel-heading"><div><p class="eyebrow">NEXT MILESTONE</p><h3 id="milestone-title">Build your first upgrade</h3></div><span class="milestone-icon">⌖</span></div>
+              <p id="milestone-description">Purchase a CPU upgrade to increase your compute output.</p>
+              <div class="mission-progress"><div><span>PROGRESS</span><b id="milestone-progress">0%</b></div><div class="bar"><i id="milestone-bar"></i></div></div>
+              <button class="primary-button" id="milestone-action">Open upgrades <span>→</span></button>
+            </div>
+          </div>
+          <div class="panel activity-panel">
+            <div class="panel-heading"><div><p class="eyebrow">NETWORK LOG</p><h3>Recent activity</h3></div><span class="muted tiny">SESSION EVENTS</span></div>
+            <div id="activity-log" class="activity-log"><p class="log-entry">System initialized. Welcome, founder.</p></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-cpu">
+          <div class="page-heading"><div><p class="eyebrow">HARDWARE DIVISION / 02</p><h1>CPU laboratory</h1><p class="muted">Push your silicon to its limits.</p></div></div>
+          <div class="cpu-lab-grid">
+            <div class="panel cpu-display-panel">
+              <div class="chip large-chip"><div class="chip-inner"><span>ITE</span><b id="lab-chip-cores">01</b><small>CORE PROCESSOR</small></div></div>
+              <h2 id="lab-cpu-name">Silicon Starter</h2><p class="muted">Your primary compute engine</p>
+              <div class="stat-pairs"><div><small>Clock speed</small><b id="lab-clock">1.0 GHz</b></div><div><small>Core count</small><b id="lab-cores">1</b></div><div><small>Base output</small><b id="lab-base">1.0 /s</b></div><div><small>Thermal load</small><b id="lab-heat">12%</b></div></div>
+            </div>
+            <div class="panel">
+              <p class="eyebrow">MANUAL COMPUTE</p><h3>Run benchmark</h3><p class="muted">Execute a manual benchmark to earn an instant credit burst.</p>
+              <button class="benchmark-button" id="benchmark"><span>ϟ</span><b>RUN BENCHMARK</b><small>CLICK TO GENERATE CREDITS</small></button>
+              <div class="benchmark-info"><span>Reward per run</span><strong id="benchmark-reward">+1 credit</strong></div>
+              <div class="benchmark-info"><span>Benchmark multiplier</span><strong id="benchmark-multiplier">1.0×</strong></div>
+            </div>
+          </div>
+          <div class="panel"><div class="panel-heading"><div><p class="eyebrow">PROCESSOR CONFIGURATION</p><h3>Hardware specifications</h3></div></div><div id="cpu-specs" class="spec-grid"></div></div>
+        </section>
+
+        <section class="page" id="page-upgrades">
+          <div class="page-heading"><div><p class="eyebrow">ENGINEERING / 03</p><h1>Hardware upgrades</h1><p class="muted">Invest in better silicon, memory and thermal performance.</p></div></div>
+          <div class="upgrade-grid" id="upgrade-list"></div>
+        </section>
+
+        <section class="page" id="page-research">
+          <div class="page-heading"><div><p class="eyebrow">R&D DIVISION / 04</p><h1>Research laboratory</h1><p class="muted">Discover technologies that redefine computing.</p></div><div class="level-pill">DATA <b id="research-balance">0</b></div></div>
+          <div class="research-intro"><span>⌘</span><div><b>Research data</b><p>Earn research data through production and use it to unlock permanent technologies.</p></div></div>
+          <div class="research-grid" id="research-list"></div>
+        </section>
+
+        <section class="page" id="page-factory">
+          <div class="page-heading"><div><p class="eyebrow">OPERATIONS / 05</p><h1>Manufacturing</h1><p class="muted">Build the components powering tomorrow.</p></div></div>
+          <div class="factory-banner"><div><span class="tag">INDUSTRIAL EXPANSION</span><h2>From lab to production line.</h2><p>Manufacturing facilities generate compute and research data automatically.</p></div><div class="factory-art">⚙</div></div>
+          <div class="facility-grid" id="factory-list"></div>
+        </section>
+
+        <section class="page" id="page-datacentres">
+          <div class="page-heading"><div><p class="eyebrow">CLOUD INFRASTRUCTURE / 06</p><h1>Data centres</h1><p class="muted">Scale from a server closet to a global compute network.</p></div></div>
+          <div class="datacentre-banner"><div><p class="eyebrow">GLOBAL INFRASTRUCTURE</p><h2 id="dc-total">0 active facilities</h2><p>Each data centre adds passive compute capacity and power demand.</p></div><div class="server-stack"><i></i><i></i><i></i><i></i></div></div>
+          <div class="facility-grid" id="datacentre-list"></div>
+        </section>
+
+        <section class="page" id="page-achievements">
+          <div class="page-heading"><div><p class="eyebrow">HALL OF PROGRESS / 07</p><h1>Achievements</h1><p class="muted">Milestones earned on your path to a technology empire.</p></div><div class="level-pill">UNLOCKED <b id="achievement-count">0/0</b></div></div>
+          <div class="achievement-grid" id="achievement-list"></div>
+        </section>
+
+        <section class="page" id="page-prestige">
+          <div class="page-heading"><div><p class="eyebrow">ASCENSION PROGRAM / 08</p><h1>Prestige</h1><p class="muted">Rebuild your empire with the knowledge of everything you've learned.</p></div></div>
+          <div class="prestige-panel">
+            <div class="prestige-symbol">✦</div><p class="eyebrow">NEXT GENERATION TECHNOLOGY</p><h2>Silicon Ascension</h2>
+            <p>Reset your credits, hardware upgrades and facilities in exchange for <b>Innovation Points</b>. Innovation permanently boosts all future production.</p>
+            <div class="prestige-stats"><div><small>AVAILABLE POINTS</small><strong id="prestige-points">0</strong></div><div><small>CURRENT BONUS</small><strong id="prestige-bonus">+0%</strong></div><div><small>LIFETIME CREDITS</small><strong id="lifetime-credits">0</strong></div></div>
+            <button class="primary-button" id="prestige-button" disabled>Ascend <span>✦</span></button>
+            <small class="muted">Requires at least 1,000,000 lifetime credits. This resets most progress.</small>
+          </div>
+          <div class="panel"><p class="eyebrow">PERMANENT LEGACY</p><h3>Innovation multiplier</h3><p class="muted">Each Innovation Point increases all compute production by 5%.</p><strong class="large-number" id="legacy-multiplier">1.00×</strong></div>
+        </section>
+      </main>
+    </div>
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+    <footer class="mobile-footer"><span>ITE <b>v1.0</b></span><span id="autosave-status">Autosave enabled</span></footer>
+  </div>
+  <script src="js/economy.js"></script>
+  <script src="js/upgrades.js"></script>
+  <script src="js/research.js"></script>
+  <script src="js/facilities.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
