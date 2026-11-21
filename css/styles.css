@@ -47,3 +47,75 @@ button{font-family:inherit;cursor:pointer}button:focus-visible{outline:2px solid
 @media(max-width:390px){.hero-panel{grid-template-columns:1fr;min-height:310px}.hero-copy{max-width:78%}.chip-wrap{position:absolute;right:5px;top:55px;width:45%;min-height:210px;opacity:.86}.hero-metrics{gap:10px}.hero-metrics>div{padding-left:7px}.hero-metrics strong{font-size:11px}.resource-card{gap:6px}.resource-icon{width:27px;height:27px}.top-stat{padding:6px}.stat-label{font-size:7px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 .benchmark-fired{animation:benchmark-impact .62s ease-out!important}@keyframes benchmark-impact{0%{filter:brightness(1)}18%{filter:brightness(1.9);box-shadow:0 0 45px #56eaff88,inset 0 0 55px #56eaff66}100%{filter:brightness(1)}}
+
+
+/* ==========================================================
+   v1.3 — IMMERSION & INTERACTION LAYER
+   Decorative presentation only; game economy/state untouched.
+   ========================================================== */
+:root{--steel:#8296a9;--steel-hi:#d3e5f2;--electric:#62e8ff;--violet:#a78bfa;--glass:rgba(12,24,40,.76)}
+.page{animation:page-arrive .42s cubic-bezier(.2,.75,.25,1) both}
+@keyframes page-arrive{from{opacity:.25;transform:translateY(9px) scale(.995)}to{opacity:1;transform:translateY(0) scale(1)}}
+.nav-item{position:relative;overflow:hidden;transition:background .25s,border-color .25s,transform .25s}
+.nav-item:before{content:"";position:absolute;inset:0;transform:translateX(-110%);background:linear-gradient(100deg,transparent,#73eaff18,transparent);transition:transform .5s}
+.nav-item:hover:before{transform:translateX(110%)}
+.nav-item:active{transform:scale(.97)}
+.panel,.item-card,.resource-card{backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);transition:border-color .25s,box-shadow .25s,transform .25s}
+.item-card{position:relative;isolation:isolate;overflow:hidden}
+.item-card:after{content:"";position:absolute;inset:0;z-index:-1;opacity:0;background:radial-gradient(circle at 10% 0,#5be7ff22,transparent 55%);transition:opacity .3s}
+.item-card:hover{transform:translateY(-3px);border-color:#4b91ad;box-shadow:0 16px 38px #0006,0 0 22px #42dfff12}
+.item-card:hover:after{opacity:1}
+.item-card:active{transform:translateY(-1px) scale(.995)}
+/* Hardware stage: layered metal package, pins, die and live core array */
+.chip{position:relative;isolation:isolate;background:linear-gradient(145deg,#d3dce2 0%,#65798b 12%,#182b3d 24%,#081522 70%,#8395a3 100%);border:2px solid #9eb5c7;box-shadow:inset 0 0 0 3px #091421,inset 0 0 24px #9beaff22,0 18px 45px #0009,0 0 35px #36dfff25}
+.chip:before{content:"";position:absolute;inset:7px;border:1px solid #c4d6e455;border-radius:inherit;background:repeating-linear-gradient(90deg,transparent 0 8px,#b8d4e51b 9px 10px),repeating-linear-gradient(0deg,transparent 0 8px,#b8d4e51b 9px 10px);pointer-events:none}
+.chip:after{content:"";position:absolute;inset:-8px;border:1px solid #64eaff45;border-radius:inherit;box-shadow:0 0 20px #43dfff22;animation:chip-edge 4s ease-in-out infinite;pointer-events:none}
+@keyframes chip-edge{50%{opacity:.35;filter:brightness(1.7)}}
+.chip-inner{position:relative;z-index:1;background:radial-gradient(ellipse at 50% 35%,#1c5470,#0b1c2c 62%,#07111e);box-shadow:inset 0 0 25px #48dfff22,0 0 16px #45dfff22}
+.chip-core-grid{position:absolute;left:15%;right:15%;bottom:13%;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:2;pointer-events:none}
+.chip-core-grid i{height:7px;border:1px solid #7deaff88;border-radius:2px;background:linear-gradient(90deg,#15506a,#58eaff);box-shadow:0 0 8px #4edfff77;animation:core-throb 1.8s ease-in-out infinite}
+.chip-core-grid i:nth-child(2n){animation-delay:.35s}.chip-core-grid i:nth-child(3n){animation-delay:.7s}
+@keyframes core-throb{50%{opacity:.38;filter:brightness(1.7)}}
+.chip.thermal-hot{box-shadow:inset 0 0 0 3px #091421,inset 0 0 30px #ff623d44,0 18px 45px #0009,0 0 45px #ff633d55}
+.chip.thermal-hot:after{border-color:#ff825b99;box-shadow:0 0 26px #ff623d66}
+.chip.thermal-warm{box-shadow:inset 0 0 0 3px #091421,inset 0 0 24px #ffbd4a22,0 18px 45px #0009,0 0 30px #ffbd4a33}
+.lab-chip-stage{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#1c536b88,transparent 48%),linear-gradient(145deg,#0c1c2c,#08111e);border:1px solid #31546b;border-radius:14px}
+.lab-chip-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,#8ceeff0b 48%,transparent 60%);transform:translateX(-100%);animation:stage-scan 6s ease-in-out infinite}
+@keyframes stage-scan{55%,100%{transform:translateX(100%)}}
+.scan-ring{border-color:#54dfff66;box-shadow:0 0 22px #40dfff15,inset 0 0 20px #40dfff12}
+.scan-ring.ring-b{border-style:dashed;border-color:#a78bfa55}
+.stat-pairs>div{background:linear-gradient(145deg,#15283a,#0b1725);border:1px solid #29475e;border-radius:8px;padding:10px}
+.stat-pairs b{color:#d9f5ff}
+.benchmark-button{position:relative;overflow:hidden;isolation:isolate}
+.benchmark-button:before{content:"";position:absolute;inset:-80% -30%;z-index:-1;background:conic-gradient(from 0deg,transparent,#5ceaff22,transparent 30%);animation:benchmark-orbit 7s linear infinite}
+@keyframes benchmark-orbit{to{transform:rotate(360deg)}}
+.benchmark-button.benchmark-fired{animation:benchmark-impact .62s ease-out!important}
+.item-icon{position:relative;overflow:hidden;box-shadow:inset 0 1px #ffffff18,0 5px 18px #0004}
+.item-icon:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#ffffff18,transparent 45%);pointer-events:none}
+.facility-visual{height:86px;margin:12px 0 13px;position:relative;overflow:hidden;border:1px solid #294c62;border-radius:9px;background:linear-gradient(110deg,#0b1b2b,#102a3b 50%,#0b1828);display:flex;align-items:center;justify-content:center;gap:7px}
+.facility-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#67eaff0d,transparent);transform:translateX(-100%);animation:facility-sweep 5s ease-in-out infinite}
+@keyframes facility-sweep{60%,100%{transform:translateX(100%)}}
+.facility-visual .machine{position:relative;width:32px;height:59px;border:2px solid #7894a9;border-radius:4px;background:linear-gradient(90deg,#14283a,#29445a,#101f30);box-shadow:inset 0 0 10px #0009,0 0 12px #43dfff19}
+.facility-visual .machine:before{content:"";position:absolute;left:5px;right:5px;top:7px;height:4px;background:#56dfff;box-shadow:0 10px #8d7aff,0 20px #56dfff,0 30px #56dfff;opacity:.85}
+.facility-visual .machine:after{content:"";position:absolute;bottom:5px;left:5px;width:4px;height:4px;border-radius:50%;background:#65f5ba;box-shadow:0 0 8px #65f5ba}
+.facility-visual.factory .machine{height:45px;width:42px;border-color:#a28c71;background:linear-gradient(90deg,#342b20,#61513a,#1c2630)}
+.facility-visual.factory .machine:before{background:#ffbf69;box-shadow:0 10px #ff8a4c,0 20px #ffd18b}
+.facility-visual .visual-caption{position:absolute;right:9px;bottom:7px;font:700 7px/1 monospace;letter-spacing:1.3px;color:#8eb1c4}
+.research-card{border-top:2px solid #66549e}
+.research-card:before{content:"";position:absolute;right:-18px;top:-22px;width:95px;height:95px;border:1px solid #a78bfa30;border-radius:50%;box-shadow:0 0 0 12px #a78bfa08,0 0 0 25px #a78bfa05;pointer-events:none}
+.research-card .item-icon{box-shadow:0 0 18px #9d8aff24,inset 0 0 14px #9d8aff22}
+.research-card.owned{border-color:#54dca7;box-shadow:0 0 20px #54dca71a}
+.research-card.owned .item-icon{border-color:#54dca7;color:#8affcb}
+.item-card .buy-button{transition:transform .18s,filter .18s,box-shadow .18s}
+.item-card .buy-button:not(:disabled):hover{filter:brightness(1.22);box-shadow:0 0 20px #44dfff28}
+.item-card .buy-button:not(:disabled):active{transform:scale(.97)}
+.toast{animation:toast-arrive .28s ease-out both}
+@keyframes toast-arrive{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:720px){
+ .facility-visual{height:70px;margin:9px 0}
+ .facility-visual .machine{height:46px;width:25px}
+ .chip-core-grid{gap:3px}.chip-core-grid i{height:5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .page,.chip:after,.chip-core-grid i,.lab-chip-stage:before,.facility-visual:before,.benchmark-button:before,.toast{animation:none!important}
+}
