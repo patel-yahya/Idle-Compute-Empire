@@ -1,57 +1,47 @@
-# Idle Tech Empire — v1.2 Visual Revolution
+# Idle Tech Empire — v1.3 Immersion & Interaction
 
-A futuristic incremental computing-empire game built with **vanilla HTML, CSS and JavaScript**. This release focuses on presentation: a more immersive hybrid-realistic sci-fi interface, animated processor hardware, layered HUD panels, live ambient particles and stronger visual feedback.
+A futuristic incremental computing-empire game built with vanilla HTML, CSS and JavaScript.
+
+## v1.3 visual update
+- Refined metallic processor package with animated silicon core indicators.
+- Processor thermal states: normal, warm and hot lighting based on the existing displayed thermal load.
+- Stylized animated server and manufacturing hardware scenes inside facility cards.
+- Stronger page transitions, card depth, hover/touch feedback and button interaction effects.
+- Research completion states receive a visual treatment.
+- Ambient particle rendering is throttled and paused while the browser tab is hidden.
+- Reduced-motion preferences are respected.
+- Responsive visual details for mobile layouts.
+
+## Gameplay and save compatibility
+This is a presentation-only update. The existing game logic, economy, upgrades, research, facilities, achievements, prestige formulas, DOM IDs and `idleTechEmpire_v1` LocalStorage save key are retained from the supplied v1.2 source. No save migration is required because no game-state schema changes were introduced.
+
+Always export a save backup before replacing a deployed build. Existing saves remain local to the same browser and site origin.
 
 ## Run locally
-
-Open `index.html` in a modern browser. No build step, package manager, server, API key or paid asset is required.
+Open `index.html` in a modern browser. No build step, package manager, framework, external API, remote font or paid asset is required.
 
 ## Deploy with GitHub Pages
-
-1. Back up your current save from the game before replacing files.
+1. Export your current game save as a backup.
 2. Extract this ZIP.
-3. Upload the contents of `Idle-Compute-Empire-main` to the root of your existing repository, replacing the previous files.
-4. Commit to the branch configured for GitHub Pages (typically `main`).
-5. Refresh the deployed site. If the old CSS remains cached, hard-refresh or clear the site's cached files.
-
-## v1.2 visual changes
-
-- Immersive hybrid-realistic visual direction: physical-looking silicon package, metallic processor edges, scan rings, status readouts and server-rack lighting.
-- Cinematic command-centre hero scene with animated lighting and floating processor.
-- Refined HUD, navigation, resource panels, telemetry, upgrade cards and research panels.
-- CPU laboratory stage with animated scan rings.
-- Animated manufacturing gear and data-centre rack indicators.
-- Lightweight ambient particle canvas, with reduced-motion support and mobile particle limits.
-- Benchmark activation flash and improved touch-friendly controls.
-- Responsive desktop and Android/mobile layouts.
-
-## Compatibility and scope
-
-- Existing gameplay systems and their DOM IDs are retained.
-- Existing LocalStorage save key remains `idleTechEmpire_v1`.
-- No economy, upgrade, research, facility, achievement or prestige formulas were intentionally changed.
-- No new backend, framework, dependency, remote font, API or paid asset is used.
-- Existing saves should load in the same browser and origin. Always export a backup before deploying any update.
+3. Upload the contents of `Idle-Compute-Empire-main` to the root of your existing repository.
+4. Commit to the branch configured for GitHub Pages.
+5. Refresh the live site. If assets appear cached, hard-refresh the page.
 
 ## Project structure
-
 ```text
 Idle-Compute-Empire-main/
 ├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   ├── achievements.js
-│   ├── economy.js
-│   ├── facilities.js
-│   ├── game.js
-│   ├── research.js
-│   ├── save.js
-│   ├── upgrades.js
-│   └── visuals.js
-└── README.md
+├── css/styles.css
+└── js/
+    ├── achievements.js
+    ├── economy.js
+    ├── facilities.js
+    ├── game.js
+    ├── research.js
+    ├── save.js
+    ├── upgrades.js
+    └── visuals.js
 ```
 
-## Testing note
-
-JavaScript syntax, required DOM IDs, script references and ZIP integrity were checked during packaging. This environment did not perform full interactive browser testing on physical Android and desktop devices. Please test benchmark, purchases, research, prestige and save loading on the deployed site before treating the release as fully production-verified.
+## Verification status
+JavaScript syntax, required script paths, required game DOM IDs and ZIP integrity were checked during packaging. Full interactive browser testing on physical Android and desktop devices has not been performed. Please test benchmark, purchases, research, facilities, prestige and save loading after deployment.
